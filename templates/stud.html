@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='exam.css') }}">
+    <title>Student Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff782;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: rgb(253, 174, 174);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #333;
+            background-color: #f9f9f9;
+        }
+
+        .section h3 {
+            margin: 0;
+            color: #444;
+        }
+
+        .section p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <span>Student Information</span>
+        <div>
+            <a href="{{ url_for('student_dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Student Related Information</h2>
+
+        <!-- Semester Fees Section -->
+        <div class="section">
+            <h3>Semester Fees</h3>
+            <p>View the semester fees details</p>
+            <a id="semesterFeesLink" href="#" download>Check the semester fees</a>
+        </div>
+
+        <!-- Scholarship Section -->
+        <div class="section">
+            <h3>View the Scholarship</h3>
+            <a id="scholarshipLink" href="#" download>Check the scholarship</a>
+        </div>
+
+        <!-- Sports Section -->
+        <div class="section">
+            <h3>Sports</h3>
+            <p>Conduct The Sports Activity in 2025</p>
+            <a id="sportsLink" href="#" download>Check the sports</a>
+        </div>
+
+        <!-- Events Section -->
+        <div class="section">
+            <h3>Events</h3>
+            <p>Announced The Technical Events</p>
+            <p><a id="eventsLink" href="#" download>Check the events</a></p>
+        </div>
+    </div>
+    
+    <script>
+        function updateLink(category, linkId) {
+            fetch(`/pdfs/${category}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const latestPdf = data[0]; // Assuming the first one is the latest
+                        document.getElementById(linkId).href = `/download/${latestPdf.filename}`;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        updateLink('sem_fees', 'semesterFeesLink');
+        updateLink('scholarship', 'scholarshipLink');
+        updateLink('sports_event', 'sportsLink');
+        updateLink('event', 'eventsLink');
+    </script>
+
+</body>
+</html>

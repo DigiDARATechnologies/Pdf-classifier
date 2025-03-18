@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='studexam.css') }}">
+    <title>Exam Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff782;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: rgb(253, 174, 174);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #333;
+            background-color: #f9f9f9;
+        }
+
+        .section h3 {
+            margin: 0;
+            color: #444;
+        }
+
+        .section p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <span>Exam Information</span>
+        <div>
+            <a href="{{ url_for('student_dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Exam Related Information</h2>
+
+        <!-- Exam Fees Section -->
+        <div class="section">
+            <h3>Exam Fees</h3>
+            <p>View the exam fees details</p>
+            <a id="examFeesLink" href="#" download>Check the exam fees</a>
+        </div>
+
+        <!-- Exam Timetable Section -->
+        <div class="section">
+            <h3>View the Exam Timetable</h3>
+            <a id="timetableLink" href="#" download>Download Exam Timetable</a>
+        </div>
+
+        <!-- Hall Ticket Section -->
+        <div class="section">
+            <h3>Hall Ticket</h3>
+            <p>Download your hall ticket from the link below.</p>
+            <a id="hallTicketLink" href="#" download>Download Hall Ticket</a>
+        </div>
+
+        <!-- Exam Result Section -->
+        <div class="section">
+            <h3>Exam Result</h3>
+            <p>Results will be announced on 10th April 2025.</p>
+            <p><a id="examResultsLink" href="#" download>Check Results Here</a></p>
+        </div>
+    </div>
+
+    <script>
+        function updateLink(category, linkId) {
+            fetch(`/pdfs/${category}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const latestPdf = data[0]; // Assuming the first one is the latest
+                        document.getElementById(linkId).href = `/download/${latestPdf.filename}`;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        updateLink('exam_fees', 'examFeesLink');
+        updateLink('exam_timetable', 'timetableLink');
+        updateLink('hall_ticket', 'hallTicketLink');
+        updateLink('exam_result', 'examResultsLink');
+    </script>
+
+</body>
+</html>

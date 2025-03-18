@@ -1,0 +1,26 @@
+# Ignore virtual environments
+.venv/
+env/
+
+# Ignore sensitive data (SQL database, uploaded PDFs)
+college_database.sql
+upload/*.pdf
+
+# Ignore large model files (use Git LFS or exclude)
+bert_model/
+bert_tokenizer/
+*.pth
+*.pkl
+
+# Ignore logs and results
+logs/
+results/
+
+# Ignore temporary files
+*.pyc
+__pycache__/
+*.txt  # Ignore generated TXT files from PDFs
+
+# Ignore uploaded files
+upload/*
+!upload/.gitkeep

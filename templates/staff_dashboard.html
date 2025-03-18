@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='staff.css') }}">
+    <title>Staff Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(61, 139, 103);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-btn {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span>Staff Dashboard</span>
+        <div>
+            <div class="dropdown">
+                <button class="dropdown-btn">Circulars ▼</button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('exam') }}">Exam</a>
+                    <a href="{{ url_for('student') }}">Student</a>
+                    <a href="#" onclick="downloadPDFs('staff_circular')">Staff PDFs</a>
+                    <a href="#" onclick="downloadPDFs('general')">General PDFs</a>
+                </div>
+            </div>
+            {# <a href="{{ url_for('download_attachments') }}">Download Attachments</a> #}
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+    <div class="dashboard">
+        <h2>Welcome to the Staff Dashboard</h2>
+        <!-- Dashboard content goes here -->
+    </div>
+
+    <script>
+        function downloadPDFs(category) {
+            fetch(`/pdfs/${category}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        data.forEach(pdf => {
+                            const link = document.createElement('a');
+                            link.href = `/download/${pdf.filename}`;
+                            link.download = pdf.filename;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        });
+                    } else {
+                        alert('No PDFs available for this category.');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+                         International Research Journal of Computer Science (IRJCS)                                     ISSN: 2393 -9842  
+                         Issue 06, Volume 6 (June  201 9)                                                                                                    www.irjcs.com  
+SPECIAL ISSUE - 5th Inter national Conference - “ACCE  – 2019”  
+____________________________________________________________________________ ______  
+IRJCS: Mendeley (Elsevier Indexed) CiteFactor Journal Citations Impact Factor 1.81  –SJIF: Innospace, 
+Morocco (2016): 4.281   Indexcopernicus: (ICV 2016): 88.80  
+© 2014 -19, IRJCS - All Rights Reserved                                                                                                                             Page -41    
+ 
+ 
+SPORTS EVENT MANAGEM ENT PLATFORM FOR 
+COLLEGES  
+Mrs. Roopa Lakshmi S 1, Muthyamala A2, Haarika C3, M Chaitanya 4, Thanuja S5 
+1.Assistant Professor, Department of CSE, Vemana Institute of Technology, Bangalore.  
+2, 3, 4, 5. UG student, Department of CSE, Vemana Institute of Technology, Bangalore.  
+1. rdruvaraj94@gmail.com  , 2.muthyamala89@gmail.com , 3.haarikareddy05@gmail.com , 
+4.mchaitanya2096@gmail.com ,  5.thanujathanu96@gmail.com  
+Manuscript History  
+Number: IRJCS/RS/Vol.0 6/Issue 06/JNCS1008 5 
+Received: 29, May  2019 
+Final Correction: 30, May 2019  
+Final Accepted: 02, June  2019 
+Published: June  2019 
+doi://10.26562/IRJCS.2019. JNCS1008 5  
+Editor:  Dr.A.Arul L.S, Chief Editor, IRJCS, AM Publ ications, India  
+Copyright: ©201 9 This is an open access article distributed under the terms of the Creative Commons Attribution 
+License, Which Permits unrestricted use, distribution, and reproduction in any medium, provided the original author 
+and source a re credited  
+ 
+ABSTRACT - A web application  or web app  is a computer program of the client -server in which client is run on the 
+server . The client may include user interface and the client service logic. In this paper, a web application  is 
+presented by developing a sports event management platform for colleges by using java, JSP, XML. The  application 
+work s on the module system. There are two modules which are user and admin module. Further, the user modul e 
+was divided into student and teacher modules. An android application for user module was developed i n order to 
+create a user -friendly environment . This  application creates an ease atmosphere to keep up the sports event 
+at colleges. The admin module consists of multiple operations where they will add the teacher who is  
+answerable for the particular event, add events going down at completely different colleg es, add students 
+and so on. The Teacher may add the student, view the results, the student will view results, can reg ister for 
+event they’re curious about and can also post their questions. This paper provides the fortunate 
+demonstration of a sports event management platform for colleges through an web app and an android app.   
+ 
+KEYWORDS  – JSP ( Java Servlet Pages), XML ( Extensible Markup Language), client -server program.  
+ 
+I. INTRODUCTION  
+A web application consists of client server program. In earlier computing models of client –server, the process load 
+for the application was shared between code  on the server and code  is put  on every  client regionally . Alternatively , 
+an application had its  own  pre-compiled client  program  that  served as its   interface  and had  to be individually  put 
+on every user's  personal laptop  or system . Web applications use  web documents  written  in a very normal  format 
+such as  hyper text markup language  and JavaScript  that  are supported by a range  of web  browsers.  Web 
+applications is thought of as a particular variant of client –server code  where the client code  is downloaded to the 
+client machine once  visiting the relevant web page, using  normal  procedures such as HTTP. Through  Java , 
+JavaScript  and alternative  technologies, application -specific  strategies  such as drawing on the screen, playing  an 
+audio, and access to the keyboard and mouse are all attainable . Web developers typically  use client -side scripting 
+to feature functionality, particularly  to make  an interactive exper tise that doesn ’t need  page reloa ding. 
+Applications are normally  broken into logical chunks known as  "tiers",  where each tier is allotted to  a task . A web 
+browser is the initial  tier (presentation), an engine using some dynamic Web content technology (such 
+as JSP/Java ) is that the center  tier (application logic), and a database  or information  is that  the third tier 
+(storage).  The web browser sends requests to the center  tier,  that  services them by creating  queries and  updates 
+against the database /information  and generates a interface.  Sports are very essential in every college or 
+institutions.  
+ 

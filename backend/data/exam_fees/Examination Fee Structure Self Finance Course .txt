@@ -1,0 +1,36 @@
+S.no Subject Fees
+1 BBA 1600
+2 BCA 1600
+3 B.Sc.(IT) 1600
+4 B.Sc.(Ag) 1600
+5 B.Sc (Biotech) 1600
+6 B.Lib (ISC) 1600
+7 BA 1600
+8 BSC 1600
+9 B.Com 1600
+10 MLT 1600
+11 B.Sc (MLT) 1600
+12 B.Sc (Nursing) 1600
+13 BPT 1600
+14 BHMCT 1600
+15 B.Sc(HM) 1600
+16 B.Sc (Forestry) 1600
+17 B.Sc (Radio & Imaging) 1600
+18 B.Sc (MM) 1600
+19 BMRIT 1600
+20 B.Sc (Physio) 1600
+21 BE 1600
+22 B.Sc (Home sc.) 1600
+23 B. PHARMA 1600
+24 B.A. LL.B 1600
+25 B.Ed. Per Sem 2250
+26 M.Ed. Ist Sem 3150
+27 M.Ed. IInd Sem 3000
+28 M.Ed. IIIrd Sem 3000
+29 M.Ed. IV Sem include degree fee 3170
+30 MBA (Tourism) 1700(Per Sem)
+31 M.Sc. (IT) 1700(Per Sem)
+32 MPT(Sports/ortho 1700(Per Sem)
+33 M.Pharm 1700(Per Sem)
+34 M.Sc.MLT 1700(Per Sem)
+35 MLT 1700(Per Sem)                  Examination Fee Structure Self Finance Course
